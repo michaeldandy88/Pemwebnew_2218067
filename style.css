@@ -91,6 +91,21 @@ h2 {
     line-height: 50px;
 }
 
+button{
+    background: #A34343;
+    border-radius: 20px;
+    margin-top: 20px;
+    padding: 15px 20px 15px 20px;
+    color: black;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button:hover{
+    background: #803D3B;
+    text-decoration: none;
+}
+
 a.button1 {
     background: #A34343;
     border-radius: 20px;

@@ -23,17 +23,30 @@
         <input type="checkbox" id="check">
         <div class="login form">
             <header>Form Login</header>
-            <form action="">
-                <input type="text" placeholder="Masukkan Email">
-                <input type="password" placeholder="Masukkan Password">
+            <form>
+                <input type="text" id="user" name="username" placeholder="Masukkan User"/>
+                <input type="password" id="pass" name="password" placeholder="Masukkan Password"/>
                 <a href="#">Lupa Password?</a>
-                <input type="button" value="login" class="button">
-                <div class="sign up">
+                <button type="button" onclick="submitLoginForm()">LOGIN</button>
+                <div class="signup">
                     <span>Belum Punya Akun?</span>
                     <label for="check">Daftar</label> 
                 </div>
             </form>
         </div>
     </div>
+    <script>
+        function submitLoginForm() {
+            let username = document.getElementById("user").value;
+            let password = document.getElementById("pass").value;
+            if (username === "mikeldan" && password === "102030") {
+                alert("Login berhasil!"); 
+                localStorage.setItem("loggedIn", "true");
+                window.location.href = "admin.html";
+            } else {
+                alert("Login gagal. Periksa kembali username dan password Anda.");
+            }
+        }
+    </script>    
 </body>
 </html>
