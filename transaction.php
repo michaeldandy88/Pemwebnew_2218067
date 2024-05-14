@@ -10,7 +10,7 @@
             <div class="logo"><a href=''>Transaksi</a></div>
             <div class="menu">
                 <ul>
-                    <li><a href="admin.html">Kembali</a></li>
+                    <li><a href="admin.php">Kembali</a></li>
                 </ul>
             </div>
       </nav>
@@ -35,7 +35,7 @@
     </div>
     <script>
          function tambahData() {
-            window.location.href = 'transaksi.html';
+            window.location.href = 'transaksi.php';
         }
     </script>
 </body>

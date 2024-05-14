@@ -12,8 +12,8 @@
             <div class="logo"><a href=''>WarungRokok.</a></div>
             <div class="menu">
                 <ul>
-                    <li><a href="index.html">Beranda</a></li>
-                    <li><a href="login.html">Login</a></li>
+                    <li><a href="index.php">Beranda</a></li>
+                    <li><a href="login.php">Login</a></li>
                     <li><a href="#shop">Shop</a></li>
                     <li><a href="" class="button1">Register</a></li>
                 </ul>

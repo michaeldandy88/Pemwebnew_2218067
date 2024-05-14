@@ -12,10 +12,10 @@
             <div class="logo"><a href=''>WarungRokok.</a></div>
             <div class="menu">
                 <ul>
-                    <li><a href="index.html">Beranda</a></li>
+                    <li><a href="index.php">Beranda</a></li>
                     <li><a href="#login">Login</a></li>
                     <li><a href="#shop">Shop</a></li>
-                    <li><a href="register.html" class="button1">Register</a></li>
+                    <li><a href="register.php" class="button1">Register</a></li>
                 </ul>
             </div>
     </nav>
@@ -40,13 +40,30 @@
             let username = document.getElementById("user").value;
             let password = document.getElementById("pass").value;
             if (username === "mikeldan" && password === "102030") {
-                alert("Login berhasil!"); 
+                alert("Login berhasil!");  
                 localStorage.setItem("loggedIn", "true");
-                window.location.href = "admin.html";
+                window.location.href = "admin.php";
             } else {
                 alert("Login gagal. Periksa kembali username dan password Anda.");
             }
         }
-    </script>    
+    </script>
+     <?php
+     //Proses validasi login
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        $username = $_POST["username"];
+        $password = $_POST["password"];
+        if ($username === "mikeldan" && $password === "102030") {
+            // Login berhasil
+            setcookie("loggedIn", "true", time() + (86400 * 30), "/");
+            header("Location: admin.php");
+            exit();
+        } else {
+            // Login gagal
+            echo "
+            <script>alert('Login gagal. Periksa kembali username dan password Anda.');</script>";
+        }
+    }
+    ?>
 </body>
 </html>

@@ -10,7 +10,7 @@
             <div class="logo"><a href=''>Tambah Data</a></div>
             <div class="menu">
                 <ul>
-                    <li><a href="admin.html">Kembali</a></li>
+                    <li><a href="admin.php">Kembali</a></li>
                 </ul>
             </div>
       </nav>
