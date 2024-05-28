@@ -22,11 +22,14 @@
     <div class="container">
                 <div class="Register form">
                     <header>Form Registrasi</header>
-                    <form action="#">
-                        <input type="text" placeholder="Masukkan Email">
-                        <input type="password" placeholder="Masukkan Password">
-                        <input type="password" placeholder="Masukkan Ulang Email">
-                        <input type="button" class="button" value="daftar">
+                    <form action="prosesregister.php" method="post">
+                        <input type="username" name="username" placeholder="Masukkan Username">
+                        <input type="password" name="password"  placeholder="Masukkan Password">
+                        <input type="email" name="email" placeholder="Masukkan Ulang Email">
+                        <button type="submit" class="btn_login" name="register"
+				id="register">
+				Register
+		    </button>
                     </form>
                     <div class="signup">
                         <span class="signup">Sudah Punya Akun?</span>

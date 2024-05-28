@@ -19,8 +19,6 @@
   </table>
   <form id="form-transaksi">
     <input type="hidden" id="transaksi-id">
-    <label for="nama-rokok">Nama Rokok:</label>
-    <input type="text" id="nama-rokok" name="nama_rokok"><br><br>
     
     <label for="jumlah-rokok">Jumlah Rokok:</label>
     <input type="number" id="jumlah-rokok" name="jumlah_rokok" min="0" max="100000"><br><br>

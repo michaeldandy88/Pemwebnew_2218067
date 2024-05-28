@@ -1,3 +1,10 @@
+<?php 
+	session_start();
+	if($_SESSION['username'] == null) {
+		header('location:login.php');
+	}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,10 +30,10 @@
     <div class="sidebar">
         <header>WarungRokok</header>
         <ul>
-            <li><a href="#"><i class="dashboard">Dashboard</i></a></li>
+            <li><a href="admin.php"><i class="dashboard">Dashboard</i></a></li>
             <li><a href="transaction.php"><i class="transaksi">Transaksi</i></a></li>
             <li><a href="jenisrokok.php"><i class="jenis">Jenis</i></a></li>
-            <li><a href="index.php"><i class="logout">Log Out</i></a></li>
+            <li><a href="logout.php"><i class="logout">Log Out</i></a></li>
         </ul>
     </div>
     <section>

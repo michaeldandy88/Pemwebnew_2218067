@@ -1,3 +1,10 @@
+<?php 
+	session_start();
+	if($_SESSION['username'] == null) {
+		header('location:../login.php');
+	}
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,13 +20,20 @@
                     <li><a href="admin.php">Kembali</a></li>
                 </ul>
             </div>
-      </nav>
-    <form id="tambah-form">
-        <label for="nama">Nama:</label>
-        <input type="text" id="nama" name="nama" required>
+        </div>
+    </nav>
+    <form action="prosestambahjenis.php" method="POST" enctype="multipart/form-data">
+        <label for="Gambar">Gambar:</label>
+        <input type="file" id="Gambar" name="Gambar" accept="image/*" required>
+        <label for="Nama">Nama:</label>
+        <input type="text" id="Nama" name="Nama" required>
         <br>
-        <label for="harga">Harga:</label>
-        <input type="number" id="harga" name="harga" required>
+        <label for="Jenis">Jenis:</label>
+        <input type="text" id="Jenis" name="Jenis" required>
+        <br>
+        <label for="isi">Isi:</label>
+        <input type="number" id="Isi" name="Isi" required>
+        <br>
         <br>
         <button type="submit">Tambah</button>
     </form>

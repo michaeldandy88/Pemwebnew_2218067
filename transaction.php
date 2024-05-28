@@ -18,15 +18,13 @@
         <tr>
             <button onclick="tambahData()">Tambah Data</button>
             <th>No.</th>
-            <th>Nama</th>
             <th>Jumlah</th>
             <th>Harga</th>
         </tr>
         <tr>
-            <td>1</td>
-            <td>Marlboro Red</td>
-            <td>1 Kotak</td>
-            <td>Rp. 44000</td>
+            <td></td>
+            <td></td>
+            <td></td>
         </tr>
     </table>
     <div class="center">

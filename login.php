@@ -23,11 +23,11 @@
         <input type="checkbox" id="check">
         <div class="login form">
             <header>Form Login</header>
-            <form>
-                <input type="text" id="user" name="username" placeholder="Masukkan User"/>
-                <input type="password" id="pass" name="password" placeholder="Masukkan Password"/>
+            <form action="proseslogin.php" method="post">
+                <input class=input type="text" id="user" name="username" placeholder="Masukkan User"/>
+                <input class=input type="password" id="pass" name="password" placeholder="Masukkan Password"/>
                 <a href="#">Lupa Password?</a>
-                <button type="button" onclick="submitLoginForm()">LOGIN</button>
+                <button type="submit" onclick="submitLoginForm()" class= "btn_login" name = "login" id = "login">LOGIN</button>
                 <div class="signup">
                     <span>Belum Punya Akun?</span>
                     <label for="check">Daftar</label> 
@@ -35,19 +35,6 @@
             </form>
         </div>
     </div>
-    <script>
-        function submitLoginForm() {
-            let username = document.getElementById("user").value;
-            let password = document.getElementById("pass").value;
-            if (username === "mikeldan" && password === "102030") {
-                alert("Login berhasil!");  
-                localStorage.setItem("loggedIn", "true");
-                window.location.href = "admin.php";
-            } else {
-                alert("Login gagal. Periksa kembali username dan password Anda.");
-            }
-        }
-    </script>
      <?php
      //Proses validasi login
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
