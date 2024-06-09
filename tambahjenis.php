@@ -24,7 +24,7 @@
     </nav>
     <form action="prosestambahjenis.php" method="POST" enctype="multipart/form-data">
         <label for="Gambar">Gambar:</label>
-        <input type="file" id="Gambar" name="Gambar" accept="image/*" required>
+        <input type="file" id="Gambar" name="Gambar" style="margin-bottom: 20px" required>
         <label for="Nama">Nama:</label>
         <input type="text" id="Nama" name="Nama" required>
         <br>
@@ -34,8 +34,11 @@
         <label for="isi">Isi:</label>
         <input type="number" id="Isi" name="Isi" required>
         <br>
+        <label for="harga">Isi:</label>
+        <input type="number" id="Harga" name="Harga" required>
         <br>
-        <button type="submit">Tambah</button>
+        <br>
+        <button type="submit" name="simpan">Tambah</button>
     </form>
 </body>
 </html>

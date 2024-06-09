@@ -10,7 +10,7 @@ if ($_SESSION['username'] == null) {
 <head>
     <title>Jenis Rokok</title>
     <link rel="stylesheet" type="text/css" href="style3.css">
-</head>
+    </head>
 <body>
     <nav>
         <div class="wrapper">
@@ -22,16 +22,19 @@ if ($_SESSION['username'] == null) {
             </div>
         </div>
     </nav>
-    <table border="1">
-        <tr>
-            <button onclick="tambahData()">Tambah Data</button>
-            <th>No.</th>
-            <th>Gambar</th>
-            <th>Nama</th>
-            <th>Jenis</th>
-            <th>Isi</th>
-            <th>Actions</th>
-        </tr>
+    <table>
+            <thead>
+                <tr>
+                    <button onclick="tambahData()">Tambah Data</button>
+                    <th scope="col" style="width: 20%">Gambar</th>
+                    <th>Nama</th>
+                    <th>Jenis</th>
+                    <th>Isi</th>
+                    <th>Harga</th>
+                    <th>Actions</th>
+                </tr>   
+            </thead>
+            <tbody>
         <?php
         // Memasukkan file koneksi.php untuk koneksi ke database
         include 'koneksi.php';
@@ -41,30 +44,27 @@ if ($_SESSION['username'] == null) {
         $result = mysqli_query($koneksi, $sql);
         
         // Memeriksa apakah ada data yang ditemukan
-        if ($result->num_rows > 0) {
+        if (mysqli_num_rows($result) == 0) {
             // Menampilkan data per baris
-            while($row = $result->fetch_assoc()) {
-                echo "<tr>
-                        <td>" . $row["ID_Jenis"]. "</td>
+        }
+            while ($row = mysqli_fetch_assoc($result)) {
+                echo "
+                <tr>
                         <td>
-                        <img src='../foto/{$row['Gambar']}' width='200px'>
+                        <img src='/foto/$row[Gambar]' width='200px'>
                             </td>
                         <td>" . $row["Nama"]. "</td>
                         <td>" . $row["Jenis"]. "</td>
                         <td>" . $row["Isi"]. "</td>
+                        <td>" . $row["Harga"]. "</td>
                         <td>
                             <button onclick='editData(" . $row["ID_Jenis"]. ")'>Edit</button>
                             <button onclick='deleteData(" . $row["ID_Jenis"]. ")'>Delete</button>
                         </td>
                     </tr>";
             }
-        } else {
-            echo "<tr><td colspan='6'>0 results</td></tr>";
-        }
-        
-        // Menutup koneksi ke database
-        // $conn->close();
         ?>
+        </tbody>
     </table>
     <script>
         function tambahData() {

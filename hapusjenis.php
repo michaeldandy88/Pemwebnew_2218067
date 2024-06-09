@@ -11,7 +11,5 @@ if (mysqli_query($koneksi, $sql)) {
     echo "Error: " . $sql . "<br>" . $conn->error;
 }
 
-//$conn->close();
-
 header('Location: admin.php');
 ?>

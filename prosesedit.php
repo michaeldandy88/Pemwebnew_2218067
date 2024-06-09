@@ -9,12 +9,13 @@ $target = "uploads/" . basename($Gambar);
 $Nama = $_POST['Nama'];
 $Jenis = $_POST['Jenis'];
 $Isi = $_POST['Isi'];
+$Harga = $_POST['Harga'];
 
 if ($Gambar) {
-    $sql = "UPDATE jenis_rokok SET Gambar='$Gambar', Nama='$Nama', Jenis='$Jenis', Isi=$Isi WHERE ID_Jenis=$ID_Jenis";
+    $sql = "UPDATE jenis_rokok SET Gambar='$Gambar', Nama='$Nama', Jenis='$Jenis', Isi='$Isi', Harga='$Harga' WHERE ID_Jenis=$ID_Jenis";
     move_uploaded_file($_FILES['Gambar']['tmp_name'], $target);
 } else {
-    $sql = "UPDATE jenis_rokok SET Nama='$Nama', Jenis='$Jenis', Isi=$Isi WHERE ID_Jenis=$ID_Jenis";
+    $sql = "UPDATE jenis_rokok SET Nama='$Nama', Jenis='$Jenis', Isi='$Isi', Harga='$Harga' WHERE ID_Jenis=$ID_Jenis";
 }
 
 if (mysqli_query($koneksi, $sql)) {

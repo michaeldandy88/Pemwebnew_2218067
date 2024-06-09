@@ -14,7 +14,7 @@
                 <ul>
                     <li><a href="index.php">Beranda</a></li>
                     <li><a href="#login">Login</a></li>
-                    <li><a href="#shop">Shop</a></li>
+                    <li><a href="shop.php">Shop</a></li>
                     <li><a href="register.php" class="button1">Register</a></li>
                 </ul>
             </div>

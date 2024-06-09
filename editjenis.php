@@ -48,6 +48,9 @@
         <label for="isi">Isi:</label>
         <input type="number" ID_Jenis="Isi" name="Isi" required>
         <br>
+        <label for="harga">Harga:</label>
+        <input type="number" ID_Jenis="Harga" name="Harga" required>
+        <br>
         <br>
         <button type="submit">Edit</button>
     </form>

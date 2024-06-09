@@ -14,27 +14,53 @@
                 </ul>
             </div>
       </nav>
-    <table border="1">
-        <tr>
-            <button onclick="tambahData()">Tambah Data</button>
-            <th>No.</th>
-            <th>Jumlah</th>
-            <th>Harga</th>
-        </tr>
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-    </table>
+      <button type="button"><a href="cetaktransaksi.php">Cetak Transaksi</a></button>
+            </button>
+      <table class="table-data">
+                <thead>
+                    <tr>
+                        <th>Tanggal</th>
+                        <th>Jumlah</th>
+                        <th>Harga</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php
+               include 'koneksi.php';
+               $sql = "SELECT * FROM transaksi";
+               $result = mysqli_query($koneksi, $sql);
+               if (mysqli_num_rows($result) == 0) {
+                  echo "
+                  <h3 style='text-align: center; color: red;'>Data Kosong</h3>
+               ";
+               } else {
+                  while ($data = mysqli_fetch_assoc($result)) {
+                     echo "
+                     <tr>
+                         <td>$data[Tanggal]</td>
+                         <td>$data[Jumlah]</td>
+                         <td>$data[Harga]</td>
+                         <td><p class='success'>$data[Status]</p></td>
+                         <td style='display: none;'>$data[Jumlah]</td>
+                         <td>
+                         <button class='btn_detail' onclick='showDetails(\"$data[Tanggal]\", \"$data[Jumlah]\", \"$data[Harga]\", \"$data[Status]\")'>Detail</button>
+                         </td>
+                     </tr>
+                     ";
+                  }
+               }
+               ?>
+                </tbody>
+            </table>
     <div class="center">
-        <button onclick="editData(1)">Edit</button>
-    <button onclick="deleteData(1)">Delete</button>
-    </div>
-    <script>
-         function tambahData() {
-            window.location.href = 'transaksi.php';
-        }
+        <script>
+    function showDetails(Tanggal, Jumlah, Harga, Status) {
+    alert(
+        `Tanggal: ${Tanggal}\nJumlah: ${Jumlah}\nHarga: ${Harga} \nStatus: ${Status}`
+    );
+}
     </script>
 </body>
 </html>
